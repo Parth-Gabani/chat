@@ -69,18 +69,20 @@
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script>
+
+        // var name = prompt("Please enter secret code:");
+        const match = "123456";
         
-        var name = prompt("Please enter your name:");
-        while (name === null || name === '')
-        {
-            var name = prompt("Please enter your name:");    
-        } 
-        document.write("Hello " + name);
-        
+       var  input = prompt("Enter the password:");
+        while (input !== match) {
+            input = prompt("Enter the password:");
+        }
+        alert("Access granted");
 
 
-           
-        
+
+
+
         var socket = io();
 
         var messages = document.getElementById('messages');
@@ -101,7 +103,7 @@
             messages.appendChild(item);
             window.scrollTo(0, document.body.scrollHeight);
         });
-    
+
     </script>
 </body>
 
