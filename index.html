@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <title>Socket.IO chat</title>
     <style>
         body {
@@ -68,8 +69,18 @@
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script>
+        
         var name = prompt("Please enter your name:");
-        document.write("Hello " + name );
+        while (name === null || name === '')
+        {
+            var name = prompt("Please enter your name:");    
+        } 
+        document.write("Hello " + name);
+        
+
+
+           
+        
         var socket = io();
 
         var messages = document.getElementById('messages');
@@ -90,6 +101,7 @@
             messages.appendChild(item);
             window.scrollTo(0, document.body.scrollHeight);
         });
+    
     </script>
 </body>
 
